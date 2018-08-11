@@ -1,5 +1,18 @@
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 body {
   background-color: hsl(220, 30%, 15%);
   font-family: courier;
-  color: hsl(80, 50%, 50%);
+  color: hsl(80, 70%, 50%);
+  font-size: 200%
+}
+
+div::after {
+  opacity: 1;
+  content: "█";
+  animation: blink 0.75s linear infinite;
 }
