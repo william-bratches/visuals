@@ -19,7 +19,7 @@ body {
 .cursor {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3.5s steps(40, end);
+  animation: typing 1.5s steps(120, end);
   letter-spacing: .10em;
 }
 
