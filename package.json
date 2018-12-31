@@ -1,0 +1,25 @@
+{
+  "name": "visual-experiments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pm2": "^3.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "./node_modules/.bin/pm2 start ./server/index.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/william-bratches/visuals.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/william-bratches/visuals/issues"
+  },
+  "homepage": "https://github.com/william-bratches/visuals#readme"
+}
