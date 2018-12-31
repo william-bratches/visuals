@@ -11,9 +11,9 @@
 
 body {
   background-color: hsl(220, 30%, 15%);
-  font-family: courier;
+  font-family: "Courier New";
   color: hsl(80, 70%, 50%);
-  font-size: 200%
+  font-size: 3em;
 }
 
 .cursor {
