@@ -23,6 +23,15 @@ body {
   letter-spacing: .10em;
 }
 
+input {
+  background-color: hsl(220, 30%, 15%);
+  border: 6px solid hsl(80, 70%, 50%);
+  box-shadow: 2px 2px 20px 1px hsl(80, 100%, 73%);
+  font-size: 2em;
+  color: hsl(80, 70%, 50%);
+  text-shadow: 2px 2px 20px greenyellow;
+}
+
 .cursor::after {
   overflow: hidden;
   opacity: 1;
