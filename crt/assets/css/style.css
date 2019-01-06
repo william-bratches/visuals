@@ -1,0 +1,87 @@
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+body {
+  background-color: hsl(220, 30%, 15%);
+  font-family: "Courier New";
+  color: hsl(80, 70%, 50%);
+  font-size: 3em;
+}
+
+input {
+  background-color: hsl(220, 30%, 15%);
+  border: 6px solid hsl(80, 70%, 50%);
+  box-shadow: 2px 2px 20px 1px hsl(80, 100%, 73%);
+  font-size: 2em;
+  color: hsl(80, 70%, 50%);
+  text-shadow: 2px 2px 20px greenyellow;
+}
+
+a {
+  color: rgb(121, 255, 121);
+}
+
+hr {
+  border-width: 0.2rem;
+  border-color: hsl(80, 70%, 50%);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-label {
+  font-size: 1em;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.glow-border {
+  border: 0.05em solid hsl(80, 70%, 50%); 
+  box-shadow: 2px 2px 10px 1px hsl(80, 100%, 73%);
+}
+
+.cursor {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(120, end);
+  letter-spacing: .10em;
+}
+
+.cursor::after {
+  overflow: hidden;
+  opacity: 1;
+  content: "█";
+  animation: blink 0.75s linear infinite;
+}
+
+.flex-vertical {
+  flex-direction: column;
+  align-items: center;
+}
+
+#utc {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#countdown {
+  font-size: 3em;
+}
