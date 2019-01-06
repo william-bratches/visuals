@@ -8,7 +8,6 @@ const getDaysRemaining = () => {
 
 }
 
-
 const setInnerHtml = () => {
   document.getElementById("utc").innerHTML = getDate();
   document.getElementById("epoch").innerHTML = getEpoch();
