@@ -8,15 +8,15 @@ const successRateMap = {
         if (current[key] === true) {
           successfulDays += 1;
         }
-
-        if (successfulDays < 3) {
-          return prev =+ 1;
-        }
       }
-    }, 0);
 
-    const successfulDays = 52 - Math.max(0, failures - 1); // account for current week
-    return successfulDays / 52;
+      if (successfulDays < 3) {
+        return prev =+ 1;
+      }
+    }, 0); // starting at zero reduces net failures by 1, acccounting for current week
+
+    const successfulWeeks = 52 - failures;
+    return Math.floor((successfulWeeks / 52) * 100);
   }
 }
 
@@ -27,9 +27,10 @@ const calculateSuccessRate = (data) => {
   }
 
   return result;
-
 }
 
 const getData = (req, res) => {
-  res.send({ data: data(), successRates: calculateSuccessRate(data()) });
+  res.json({ data: data(), successRates: calculateSuccessRate(data()) });
 }
+
+module.exports = getData;

@@ -93,6 +93,15 @@ hr {
   width: 8em;
 }
 
+.stat-label {
+  display: flex;
+  margin-right: 30px;
+  font-size: 2em;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 #utc {
   text-align: center;
   font-size: 2rem;
@@ -100,4 +109,10 @@ hr {
 
 #countdown {
   font-size: 3em;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+  .no-mobile {
+    display: none;
+  }
 }
