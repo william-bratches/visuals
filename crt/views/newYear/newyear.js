@@ -13,8 +13,7 @@ const dayOfYear = (now) => {
 const getDaysRemaining = () => {
     const newYear = Math.floor(new Date('2019').getTime() / 1000);
     const currentDay = dayOfYear(new Date());
-    return 364 - currentDay;
-
+    return 365 - currentDay;
 }
 
 const setInnerHtml = () => {
