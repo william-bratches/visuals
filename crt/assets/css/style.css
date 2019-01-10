@@ -78,6 +78,8 @@ hr {
   align-items: center;
 }
 .toggle-box {
+  text-align: center;
+  font-size: 0.35em;
   margin: 10px;
   width: 25px;
   height: 25px;

@@ -3,7 +3,6 @@ const getHtmlString = (path) => {
 }
 
 const loadIntoDocument = (className, html) => {
-  console.log(html);
   const nodeList = document.getElementsByClassName(className);
   for (let element = 0; element < nodeList.length; element++) {
     nodeList[element].innerHTML = html;
