@@ -11,10 +11,11 @@ const getWeekNumber = () => {
   return [d.getUTCFullYear(), weekNo];
 }
 
+// "hydrate" view with data
 fetch('/data').then(res => res.json()).then(payload => {
   const { data } = payload;
   const weekOfTheYear = getWeekNumber()[1];
-
+  
   for (let key in data) {
     const el = document.querySelector(`div[key="${key}"]`);
     const currentWeekData = data[key][weekOfTheYear - 1];
@@ -22,7 +23,8 @@ fetch('/data').then(res => res.json()).then(payload => {
     for (let day in currentWeekData) {
       booleans.push(currentWeekData[day]);
     }
-
+    
+    // fill in toggle boxes
     el.querySelectorAll('.toggle-box').forEach((box, index) => {
       if (booleans[index]) {
         const currentClassName = box.getAttribute('class');
