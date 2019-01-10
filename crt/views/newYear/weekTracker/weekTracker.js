@@ -2,6 +2,10 @@ import loadFile from '../../../lib/loadFile.js';
 
 loadFile('week-tracker', '/views/newYear/weekTracker/weekTracker.html');
 
+// TODO:
+// success rate
+// custom labels
+
 const getWeekNumber = () => {
   // stack overflow code....I am lazy.
   const d = new Date();
@@ -12,7 +16,7 @@ const getWeekNumber = () => {
 }
 
 // "hydrate" view with data
-fetch('/data').then(res => res.json()).then(payload => {
+window.onload = fetch('/data').then(res => res.json()).then(payload => {
   const { data } = payload;
   const weekOfTheYear = getWeekNumber()[1];
   
@@ -23,6 +27,10 @@ fetch('/data').then(res => res.json()).then(payload => {
     for (let day in currentWeekData) {
       booleans.push(currentWeekData[day]);
     }
+
+    el.querySelectorAll('label')[0].innerHTML = el.getAttribute('toplabel');
+    el.querySelectorAll('label')[1].innerHTML = el.getAttribute('sublabel');
+
     
     // fill in toggle boxes
     el.querySelectorAll('.toggle-box').forEach((box, index) => {
@@ -34,3 +42,4 @@ fetch('/data').then(res => res.json()).then(payload => {
     });
   }
 });
+
