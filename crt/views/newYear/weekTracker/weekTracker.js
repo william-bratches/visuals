@@ -2,8 +2,6 @@ import loadFile from '../../../lib/loadFile.js';
 
 loadFile('week-tracker', '/views/newYear/weekTracker/weekTracker.html');
 
-// TODO: success rate
-
 const getWeekNumber = () => {
   // stack overflow code....I am lazy.
   const d = new Date();
