@@ -2,9 +2,7 @@ import loadFile from '../../../lib/loadFile.js';
 
 loadFile('week-tracker', '/views/newYear/weekTracker/weekTracker.html');
 
-// TODO:
-// success rate
-// custom labels
+// TODO: success rate
 
 const getWeekNumber = () => {
   // stack overflow code....I am lazy.
@@ -30,6 +28,10 @@ window.onload = fetch('/data').then(res => res.json()).then(payload => {
 
     el.querySelectorAll('label')[0].innerHTML = el.getAttribute('toplabel');
     el.querySelectorAll('label')[1].innerHTML = el.getAttribute('sublabel');
+
+
+    const successRate = `${payload.successRates[key]}%`
+    el.querySelector('.success-rate').innerHTML = successRate;
 
     
     // fill in toggle boxes
