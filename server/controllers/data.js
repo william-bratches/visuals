@@ -13,6 +13,8 @@ const successRateMap = {
       if (successfulDays < 3) {
         return prev =+ 1;
       }
+
+      return prev;
     }, 0); // starting at zero reduces net failures by 1, acccounting for current week
 
     const successfulWeeks = 52 - failures;
