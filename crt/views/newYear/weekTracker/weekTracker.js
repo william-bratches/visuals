@@ -24,9 +24,10 @@ window.onload = fetch('/data').then(res => res.json()).then(payload => {
       booleans.push(currentWeekData[day]);
     }
 
-    el.querySelectorAll('label')[0].innerHTML = el.getAttribute('toplabel');
-    el.querySelectorAll('label')[1].innerHTML = el.getAttribute('sublabel');
+    const labels = el.querySelectorAll('label');
 
+    labels[0].innerHTML = el.getAttribute('toplabel');
+    labels[1].innerHTML = el.getAttribute('sublabel');
 
     const successRate = `${payload.successRates[key]}%`
     el.querySelector('.success-rate').innerHTML = successRate;

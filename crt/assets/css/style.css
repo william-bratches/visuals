@@ -109,6 +109,25 @@ hr {
   align-items: flex-end;
 }
 
+.static {
+  width: 9em;
+}
+
+.load-box {
+  font-size: 0.35em;
+  margin: 10px;
+  width: 240px;
+  height: 25px;
+  border: 3px solid hsl(80, 70%, 50%);
+  box-shadow: 2px 2px 10px 1px hsl(80, 100%, 73%);
+}
+
+.load-fill-box {
+  display: inline;
+  color: grey;
+  background-color: hsl(80, 70%, 50%);
+}
+
 #utc {
   text-align: center;
   font-size: 2rem;

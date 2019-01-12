@@ -2,7 +2,7 @@ const data = require('../data');
 
 const successRateMap = {
   coding(data) {
-    const failures = data.coding.reduce((prev, current) => {
+    const successes = data.coding.reduce((prev, current) => {
       let successfulDays = 0;
       for (let key in current) {
         if (current[key] === true) {
@@ -11,14 +11,16 @@ const successRateMap = {
       }
 
       if (successfulDays < 3) {
-        return prev =+ 1;
+        return prev;
       }
 
-      return prev;
+      return prev += 1;
     }, 0); // starting at zero reduces net failures by 1, acccounting for current week
 
-    const successfulWeeks = 52 - failures;
-    return Math.floor((successfulWeeks / 52) * 100);
+    return Math.floor((successes / 52) * 100);
+  },
+  blog(data) {
+    return (data.blog.current / data.blog.goal);
   }
 }
 
