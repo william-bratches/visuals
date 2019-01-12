@@ -20,11 +20,12 @@ const loadFile = (className, path) => {
 
 const hydrate = (className, cb) => {
   window.onload = fetch('/data').then(res => res.json()).then(payload => {
+    const { data } = payload;
     
     for (let key in data) {
       const el = document.querySelector(`div[key="${key}"]`);
   
-      if (hasClass(el, 'bar-counter')) {
+      if (el && hasClass(el, 'bar-counter')) {
         cb(el, payload);
       }
     }
@@ -37,7 +38,7 @@ const loadAndHydrate = (className, path, cb) => {
 };
   
 
-  export default {
+  export {
     loadAndHydrate,
     loadFile,
     hydrate,
