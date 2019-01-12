@@ -114,6 +114,7 @@ hr {
 }
 
 .load-box {
+  position: relative;
   font-size: 0.35em;
   margin: 10px;
   width: 240px;
@@ -123,8 +124,10 @@ hr {
 }
 
 .load-fill-box {
-  display: inline;
+  position: absolute;
   color: grey;
+  height: 100%;
+  width: 0px;
   background-color: hsl(80, 70%, 50%);
 }
 

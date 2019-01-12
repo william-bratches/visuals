@@ -1,13 +1,18 @@
-import loadFile from '../../../lib/loadFile.js';
+import { loadAndHydrate } from '../../../lib/loadFile.js';
 
-loadFile('bar-counter', '/views/newYear/barCounter/barCounter.html');
+const className = 'bar-counter';
 
-// "hydrate" view with data
-window.onload = fetch('/data').then(res => res.json()).then(payload => {
-  const { data } = payload;
-  
-  for (let key in data) {
-    const el = document.querySelector(`div[key="${key}"]`);
-  }
+loadAndHydrate('bar-counter', '/views/newYear/barCounter/barCounter.html', (element, payload) => {
+  const { data, successRate } = payload;
+  const fractionDisplay = `${data[key].current}/${data[key].goal}`;
+  console.log(fractionDisplay);
+  const portionCompleted = successRate[key];
+
+  el.querySelector('.fraction').innerHTML = fractionDisplay;
+
+
+  // expand bar to relevants size
+  const width = parseInt(el.querySelector('.load-box').style.width);
+  const barWidth = width * portionCompleted;
+  el.querySelector('.load-box-fill').style.width = `${barWidth}px`;
 });
-

@@ -1,4 +1,4 @@
-import loadFile from '../../../lib/loadFile.js';
+import { loadFile, hydrate } from '../../../lib/loadFile.js';
 
 loadFile('week-tracker', '/views/newYear/weekTracker/weekTracker.html');
 

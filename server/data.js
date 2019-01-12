@@ -2,10 +2,10 @@
 const data = () => ({
   coding: [
     { mon: true, tue: false, wed: false, thu: false, fri: false, sat: false, sun: true },
-    { mon: false, tue: true, wed: true, thu: true, fri: false, sat: false, sun: false },
+    { mon: false, tue: true, wed: true, thu: true, fri: false, sat: true, sun: false },
   ],
   blog: {
-    current: 0,
+    current: 1,
     goal: 6
   }
 });
