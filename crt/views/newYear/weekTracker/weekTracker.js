@@ -11,7 +11,7 @@ const getWeekNumber = () => {
 
 
 loadAndHydrate('week-tracker', '/views/newYear/weekTracker/weekTracker.html', (el, payload) => {
-  const currentWeekData = data[key][weekOfTheYear - 1];
+  const currentWeekData = data[weekOfTheYear - 1];
   const booleans = [];
   for (let day in currentWeekData) {
     booleans.push(currentWeekData[day]);
@@ -22,7 +22,7 @@ loadAndHydrate('week-tracker', '/views/newYear/weekTracker/weekTracker.html', (e
   labels[0].innerHTML = el.getAttribute('toplabel');
   labels[1].innerHTML = el.getAttribute('sublabel');
 
-  const successRate = `${payload.successRates[key]}%`
+  const successRate = `${payload.successRates}%`
   el.querySelector('.success-rate').innerHTML = successRate;
 
   
