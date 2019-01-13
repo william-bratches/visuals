@@ -1,17 +1,16 @@
 import { loadAndHydrate } from '../../../lib/loadFile.js';
+import getProperty from '../../../lib/styles.js';
 
 const className = 'bar-counter';
 
-loadAndHydrate('bar-counter', '/views/newYear/barCounter/barCounter.html', (element, payload) => {
+loadAndHydrate('bar-counter', '/views/newYear/barCounter/barCounter.html', (el, payload) => {
   const { data, successRates } = payload;
   const fractionDisplay = `${data.current}/${data.goal}`;
-  console.log(fractionDisplay);
-
   el.querySelector('.fraction').innerHTML = fractionDisplay;
 
 
   // expand bar to relevants size
-  const width = parseInt(el.querySelector('.load-box').style.width);
+  const width = parseInt(getProperty('.load-box', 'width'));
   const barWidth = width * successRates;
-  el.querySelector('.load-box-fill').style.width = `${barWidth}px`;
+  el.querySelector('.load-fill-box').style.width = `${barWidth}px`;
 });

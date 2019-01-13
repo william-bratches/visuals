@@ -17,14 +17,12 @@ const loadFile = (className, path) => {
 
 const hydrate = (className, cb) => {
   window.onload = fetch('/data').then(res => res.json()).then(payload => {
-    console.log(className)
     const { data, successRates } = payload;
     const nodes = [].slice.call(document.querySelectorAll(`.${className}`));
     const matchingKeys = nodes.map(element => element.getAttribute('key'));
     matchingKeys.forEach(key => {
       const el = document.querySelector(`div[key="${key}"]`);
       const relevantPayload = { data: data[key], successRates: successRates[key] }
-      console.log(relevantPayload);
       cb(el, relevantPayload);
     });
   });

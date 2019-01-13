@@ -5,7 +5,7 @@ const data = () => ({
     { mon: false, tue: true, wed: true, thu: true, fri: false, sat: true, sun: false },
   ],
   blog: {
-    current: 1,
+    current: 0,
     goal: 6
   }
 });
