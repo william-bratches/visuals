@@ -1,4 +1,6 @@
 import { loadAndHydrate } from '../../../lib/loadFile.js';
+import setLabels from '../../common/label.js'
+import setSuccessRate from '../../common/successRate.js';
 
 const getWeekNumber = () => {
   // stack overflow code....I am lazy.
@@ -9,28 +11,16 @@ const getWeekNumber = () => {
   return [d.getUTCFullYear(), weekNo];
 }
 
-
-loadAndHydrate('week-tracker', '/views/newYear/weekTracker/weekTracker.html', (el, payload) => {
-  const { data, successRates } = payload;
-  const weekOfTheYear = getWeekNumber()[1];
-  const currentWeekData = data[weekOfTheYear - 1];
-
-  // map data to boolean array
-  const booleans = [];
-  for (let day in currentWeekData) {
-    booleans.push(currentWeekData[day]);
+const mapObjectToArray = (obj) => {
+  let arr = [];
+  for (let key in obj) {
+    arr.push(obj[key]);
   }
-  
-  // labels
-  const labels = el.querySelectorAll('label');
-  labels[0].innerHTML = el.getAttribute('toplabel');
-  labels[1].innerHTML = el.getAttribute('sublabel');
 
-  // success rate
-  const successRateDisplay = `${successRates}%`
-  el.querySelector('.success-rate').innerHTML = successRateDisplay;
-  
-  // fill in toggle boxes
+  return arr;
+}
+
+const fillToggleBoxes = (el, booleans) => {
   el.querySelectorAll('.toggle-box').forEach((box, index) => {
     if (booleans[index]) {
       const currentClassName = box.getAttribute('class');
@@ -38,5 +28,20 @@ loadAndHydrate('week-tracker', '/views/newYear/weekTracker/weekTracker.html', (e
       box.className = newClassName;
     }
   });
+}
+
+loadAndHydrate('week-tracker', '/views/newYear/weekTracker/weekTracker.html', (el, payload) => {
+  const { data, successRates } = payload;
+  const weekOfTheYear = getWeekNumber()[1];
+  const currentWeekData = data[weekOfTheYear - 1];
+
+  const booleans = mapObjectToArray(currentWeekData);
+
+  setLabels(el);
+
+  setSuccessRate(el, successRates);
+  
+  fillToggleBoxes(el, booleans);
+  
 });
 
