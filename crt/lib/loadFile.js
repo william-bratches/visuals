@@ -1,3 +1,5 @@
+let cachedPayload;
+
 const getHtmlString = (path) => {
   return Promise.resolve('<div class="cursor">Hi there!</div>');
 }
@@ -15,16 +17,21 @@ const loadFile = (className, path) => {
     .then(html => loadIntoDocument(className, html));
 };
 
+const processResponse = (className, payload, cb) => {
+  const { data, successRates } = payload;
+  const nodes = [].slice.call(document.querySelectorAll(`.${className}`));
+  const matchingKeys = nodes.map(element => element.getAttribute('key'));
+  matchingKeys.forEach(key => {
+    const el = document.querySelector(`div[key="${key}"]`);
+    const relevantPayload = { data: data[key], successRates: successRates[key] }
+    cb(el, relevantPayload);
+  });
+}
+
 const hydrate = (className, cb) => {
-  window.onload = fetch('/data').then(res => res.json()).then(payload => {
-    const { data, successRates } = payload;
-    const nodes = [].slice.call(document.querySelectorAll(`.${className}`));
-    const matchingKeys = nodes.map(element => element.getAttribute('key'));
-    matchingKeys.forEach(key => {
-      const el = document.querySelector(`div[key="${key}"]`);
-      const relevantPayload = { data: data[key], successRates: successRates[key] }
-      cb(el, relevantPayload);
-    });
+  window.onload = fetch('/data').then(res => res.json()).then(response => {
+    cachedPayload = response;
+    processResponse(className, response, cb);
   });
 };
 

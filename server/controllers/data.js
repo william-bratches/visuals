@@ -21,6 +21,9 @@ const successRateMap = {
   },
   blog(data) {
     return (data.blog.current / data.blog.goal);
+  },
+  deadlift(data) {
+    return data.deadlift ? 100 : 0;
   }
 }
 
