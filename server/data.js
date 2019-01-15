@@ -14,6 +14,18 @@ const data = () => ({
     current: 0,
     goal: 6
   },
+  people: {
+    current: 0,
+    goal: 2
+  },
+  talks: {
+    current: 0,
+    goal: 3
+  },
+  twitter: {
+    current: 10,
+    goal: 50
+  },
   salad: {
     current: 5,
     goal: 200
@@ -26,7 +38,14 @@ const data = () => ({
     current: 0,
     goal: 2
   },
-  deadlift: false
+  revenue: false,
+  deadlift: false,
+  curl: false,
+  press: false,
+  squat: false,
+  pushup: false,
+  situp: true,
+  run: false
 });
 
 module.exports = data;

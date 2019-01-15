@@ -40,6 +40,21 @@ hr {
   color: hsl(80, 50%, 52%);
 }
 
+.inverse {
+  background-color: hsl(80, 70%, 50%);
+  text-shadow: black;
+  color: hsl(220, 30%, 15%);
+  animation: none;
+}
+.inverse:after {
+  text-shadow: black;
+  animation: none;
+}
+
+.blue {
+  color: hsl(184, 91%, 64%);
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -60,8 +75,8 @@ hr {
 }
 
 .glow-border {
-  border: 0.05em solid hsl(80, 70%, 50%); 
-  box-shadow: 2px 2px 10px 1px hsl(80, 100%, 73%);
+  border: 0.02em solid hsl(80, 70%, 50%); 
+  box-shadow: 1px 1px 5px 1px hsl(80, 100%, 73%);
 }
 
 .cursor {
@@ -119,13 +134,14 @@ hr {
 }
 
 .load-box {
+  background-color: hsl(220, 30%, 15%);
   position: relative;
   font-size: 0.35em;
   margin: 10px;
   width: 240px;
   height: 25px;
   border: 3px solid hsl(80, 70%, 50%);
-  box-shadow: 2px 2px 10px 1px hsl(80, 100%, 73%);
+  box-shadow: 2px 2px 10px 1px hsl(80, 70%, 50%);
 }
 
 .load-fill-box {

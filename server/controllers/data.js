@@ -1,42 +1,78 @@
 const data = require('../data');
 
+const week = (data, prop) => {
+  const successes = data[prop].reduce((prev, current) => {
+    let successfulDays = 0;
+    for (let key in current) {
+      if (current[key] === true) {
+        successfulDays += 1;
+      }
+    }
+
+    if (successfulDays < 3) {
+      return prev;
+    }
+
+    return prev += 1;
+  }, 0); // starting at zero reduces net failures by 1, acccounting for current week
+
+  return Math.floor((successes / 52) * 100) / 100;
+}
+
+const fraction = (data, prop) => (data[prop].current / data[prop].goal)
+
 // this is a mistake, closely coupling data to controller. Needs a refactor
 const successRateMap = {
   coding(data) {
-    const successes = data.coding.reduce((prev, current) => {
-      let successfulDays = 0;
-      for (let key in current) {
-        if (current[key] === true) {
-          successfulDays += 1;
-        }
-      }
-
-      if (successfulDays < 3) {
-        return prev;
-      }
-
-      return prev += 1;
-    }, 0); // starting at zero reduces net failures by 1, acccounting for current week
-
-    return Math.floor((successes / 52) * 100);
+    return week(data, "coding");
   },
   meditation(data) {
-    return this.coding(data);
+    return week(data, "meditation");
   },
   blog(data) {
-    return (data.blog.current / data.blog.goal);
+    return fraction(data, "blog");
   },
   salad(data) {
-    return this.blog(data);
+    return fraction(data, "salad");
   },
   deadlift(data) {
-    return data.deadlift ? 100 : 0;
+    return data.deadlift ? 1 : 0;
+  },
+  curl(data) {
+    return data.curl ? 1 : 0;
+  },
+  press(data) {
+    return data.press ? 1 : 0;
+  },
+  squat(data) {
+    return data.squat ? 1 : 0;
+  },
+  pushup(data) {
+    return data.pushup ? 1 : 0;
+  },
+  situp(data) {
+    return data.situp ? 1 : 0;
+  },
+  run(data) {
+    return data.run ? 1 : 0;
   },
   opensource(data) {
-    return this.blog(data);
+    return fraction(data, "opensource");
   },
   internal(data) {
-    return this.blog(data);
+    return fraction(data, "internal");
+  },
+  revenue(data) {
+    return data.revenue ? 1: 0;
+  },
+  talks(data) {
+    return fraction(data, "talks");
+  },
+  people(data) {
+    return fraction(data, "people");
+  },
+  twitter(data) {
+    return fraction(data, "twitter");
   }
 }
 
