@@ -1,5 +1,3 @@
-let cachedPayload;
-
 const getHtmlString = (path) => {
   return Promise.resolve('<div class="cursor">Hi there!</div>');
 }
@@ -28,9 +26,12 @@ const processResponse = (className, payload, cb) => {
   });
 }
 
+const retrieveData = () => {
+
+}
+
 const hydrate = (className, cb) => {
   window.onload = fetch('/data').then(res => res.json()).then(response => {
-    cachedPayload = response;
     processResponse(className, response, cb);
   });
 };
