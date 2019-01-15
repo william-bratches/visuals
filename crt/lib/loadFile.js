@@ -28,8 +28,8 @@ const processResponse = (className, payload, cb) => {
 }
 
 const hydrate = (className, cb) => {
-  window.onload = fetch('/data').then(res => res.json()).then(response => {
-    processResponse(className, response, cb);
+  fetch('/data').then(res => res.json()).then(response => {
+    window.onload = processResponse(className, response, cb);
   });
 };
 
