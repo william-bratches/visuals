@@ -35,6 +35,11 @@ hr {
   box-shadow: 2px 2px 8px 1px hsl(80, 100%, 73%);
 }
 
+.soft-font {
+  font-size: 0.8em;
+  color: hsl(80, 50%, 52%);
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

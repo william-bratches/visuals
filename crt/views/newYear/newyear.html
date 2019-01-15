@@ -6,36 +6,49 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/crt.css">
   </head>
-  <body class="crt">
-    <div class="cursor">2019 Resolution Stats!</div>
-    <hr>
-    <div class="container padded">
-      <div class="no-mobile box flex-vertical padded">
-        <div id="utc"></div>
-        <div id="epoch"></div>
+  <body>
+    <div class="soft-font flicker">
+      <div class="cursor">2019 Resolution Stats!</div>
+      <hr>
+      <div class="container padded">
+        <div class="no-mobile box flex-vertical padded">
+          <div id="utc"></div>
+          <div id="epoch"></div>
+        </div>
+        <div class="box baseline padded">
+          <span id="countdown">
+            365
+          </span>
+          <span class="sub-label">
+            Days Left
+          </span>
+        </div>
       </div>
-      <div class="box baseline padded">
-        <span id="countdown">
-          365
-        </span>
-        <span class="sub-label">
-          Days Left
-        </span>
-      </div>
-    </div>
 
-    <div class="glow-border">
-      <div class="week-tracker" key="coding" sublabel="Git this week:" toplabel="3 Code sessions per week"></div>
-    </div>
-    <div class="glow-border">
-      <div class="bar-counter" key="blog" sublabel="Progress:" toplabel="Write 6 Blog Posts"></div>
-    </div>
-    <div class="glow-border">
-      <div class="single-toggle-box" key="deadlift" sublabel="Done:" toplabel="Test test"></div>
-    </div>
-  </body>
-  <script type='module' src='newyear.js'></script>
-  <script type='module' src='./weekTracker/weekTracker.js'></script>
-  <script type='module' src='./barCounter/barCounter.js'></script>
-  <script type='module' src='./toggleBox/toggleBox.js'></script>
+      <div class="glow-border">
+        <div class="week-tracker" key="coding" sublabel="Git this week:" toplabel="3 Code sessions/week"></div>
+      </div>
+      <div class="glow-border">
+          <div class="week-tracker" key="meditation" sublabel="This week:" toplabel="3 Meditations/week"></div>
+        </div>
+      <div class="glow-border">
+        <div class="bar-counter" key="blog" sublabel="Progress:" toplabel="Write 6 Blog Posts"></div>
+      </div>
+      <div class="glow-border">
+        <div class="bar-counter" key="salad" sublabel="Progress:" toplabel="Eat 200 Salads"></div>
+      </div>
+      <div class="glow-border">
+        <div class="bar-counter" key="opensource" sublabel="Progress:" toplabel="Create 3 open-source tools"></div>
+      </div>
+        
+      <div class="glow-border">
+        <div class="single-toggle-box" key="deadlift" sublabel="Done:" toplabel="Test test"></div>
+      </div>
+    </body>
+    <script type='module' src='newyear.js'></script>
+    <script type='module' src='./weekTracker/weekTracker.js'></script>
+    <script type='module' src='./barCounter/barCounter.js'></script>
+    <script type='module' src='./toggleBox/toggleBox.js'></script>
+    <canvas width=400 height=300></canvas>
+  </div>
 </html>

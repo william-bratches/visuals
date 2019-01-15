@@ -155,6 +155,7 @@
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
 }
-.crt {
+
+.flicker {
   animation: textShadow 1s infinite;
 }
