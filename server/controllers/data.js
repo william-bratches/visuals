@@ -19,7 +19,7 @@ const week = (data, prop) => {
   return Math.floor((successes / 52) * 100) / 100;
 }
 
-const fraction = (data, prop) => (data[prop].current / data[prop].goal)
+const fraction = (data, prop) => Math.floor(data[prop].current / data[prop].goal * 100) / 100
 
 // this is a mistake, closely coupling data to controller. Needs a refactor
 const successRateMap = {
@@ -29,11 +29,20 @@ const successRateMap = {
   meditation(data) {
     return week(data, "meditation");
   },
+  earlybird(data) {
+    return week(data, "earlybird");
+  },
+  hair(data) {
+    return week(data, "hair");
+  },
   blog(data) {
     return fraction(data, "blog");
   },
   salad(data) {
     return fraction(data, "salad");
+  },
+  friends(data) {
+    return fraction(data, "friends");
   },
   deadlift(data) {
     return data.deadlift ? 1 : 0;
@@ -55,6 +64,12 @@ const successRateMap = {
   },
   run(data) {
     return data.run ? 1 : 0;
+  },
+  perform(data) {
+    return data.perform ? 1 : 0;
+  },
+  tracks(data) {
+    return fraction(data, "tracks");
   },
   opensource(data) {
     return fraction(data, "opensource");

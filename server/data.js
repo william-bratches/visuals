@@ -10,6 +10,20 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
   ],
+  earlybird: [
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+  ],
+  hair: [
+    { mon: false, tue: true, wed: true, thu: true, fri: false, sat: false, sun: false },
+    { mon: true, tue: false, wed: false, thu: true, fri: false, sat: true, sun: false },
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+  ],
+  friends: {
+    current: 3,
+    goal: 52
+  },
   blog: {
     current: 0,
     goal: 6
@@ -38,6 +52,10 @@ const data = () => ({
     current: 0,
     goal: 2
   },
+  tracks: {
+    current: 0,
+    goal: 2
+  },
   revenue: false,
   deadlift: false,
   curl: false,
@@ -45,7 +63,8 @@ const data = () => ({
   squat: false,
   pushup: false,
   situp: true,
-  run: false
+  run: false,
+  perform: false
 });
 
 module.exports = data;
