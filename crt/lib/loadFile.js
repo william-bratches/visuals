@@ -7,11 +7,12 @@ const loadIntoDocument = (className, html) => {
   for (let element = 0; element < nodeList.length; element++) {
     nodeList[element].innerHTML = html;
   }
+  return Promise.resolve();
 };
 
 
 const loadFile = (className, path) => {
-  fetch(path).then(res => res.text())
+  return fetch(path).then(res => res.text())
     .then(html => loadIntoDocument(className, html));
 };
 
@@ -26,10 +27,6 @@ const processResponse = (className, payload, cb) => {
   });
 }
 
-const retrieveData = () => {
-
-}
-
 const hydrate = (className, cb) => {
   window.onload = fetch('/data').then(res => res.json()).then(response => {
     processResponse(className, response, cb);
@@ -37,8 +34,7 @@ const hydrate = (className, cb) => {
 };
 
 const loadAndHydrate = (className, path, cb) => {
-  loadFile(className, path);
-  hydrate(className, cb)
+  loadFile(className, path).then(() => hydrate(className, cb));
 };
 
 
