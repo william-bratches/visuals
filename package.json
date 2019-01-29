@@ -14,11 +14,18 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "babel-preset-minify": "^0.5.0"
+    "babel-preset-minify": "^0.5.0",
+    "clean-css-cli": "^4.2.1"
   },
   "scripts": {
+    "stop": "./node_modules/.bin/pm2 kill",
     "start": "./node_modules/.bin/pm2 start ./server/index.js --watch",
-    "transpile": "./node_modules/.bin/babel crt --out-dir dist",
+    "start:production": "NODE_ENV=production ./node_modules/.bin/pm2 start ./server/index.js",
+    "transpile": "npm run transpile:babel && npm run transpile:css",
+    "transpile:babel": "./node_modules/.bin/babel crt --out-dir dist --copy-files",
+    "transpile:css": "npm run transpile:css:style && npm run transpile:css:crt",
+    "transpile:css:style": "./node_modules/.bin/cleancss -o  dist/assets/css/style.css dist/assets/css/style.css",
+    "transpile:css:crt": "./node_modules/.bin/cleancss -o  dist/assets/css/crt.css dist/assets/css/crt.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
