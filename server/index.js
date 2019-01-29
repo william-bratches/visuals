@@ -5,8 +5,9 @@ const config = require('./env');
 const port = config.port;
 const crt = path.resolve(__dirname, '../crt');
 const getData = require('./controllers/data');
-
+const stats = path.join(__dirname, '../crt/views/newYear');
 app.use('/', express.static(crt));
 app.use('/data', getData);
+app.use('/stats', express.static(stats));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))

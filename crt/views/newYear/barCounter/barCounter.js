@@ -1,7 +1,7 @@
 import { loadAndHydrate } from '../../../lib/loadFile.js';
 import getProperty from '../../../lib/styles.js';
-import setLabels from '../../common/label.js';
-import setSuccessRate from '../../common/successRate.js';
+import setLabels from '../../../common/label.js';
+import setSuccessRate from '../../../common/successRate.js';
 
 const className = 'bar-counter';
 

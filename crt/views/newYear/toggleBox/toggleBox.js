@@ -1,7 +1,7 @@
 import { loadAndHydrate } from '../../../lib/loadFile.js';
 import getProperty from '../../../lib/styles.js';
-import setLabels from '../../common/label.js';
-import setSuccessRate from '../../common/successRate.js';
+import setLabels from '../../../common/label.js';
+import setSuccessRate from '../../../common/successRate.js';
 
 const fillToggleBox = (el, boolean) => {
   const box = el.querySelector('.toggle-box');

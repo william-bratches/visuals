@@ -1,6 +1,6 @@
 import { loadAndHydrate } from '../../../lib/loadFile.js';
-import setLabels from '../../common/label.js'
-import setSuccessRate from '../../common/successRate.js';
+import setLabels from '../../../common/label.js'
+import setSuccessRate from '../../../common/successRate.js';
 
 const getWeekNumber = () => {
   // stack overflow code....I am lazy.
