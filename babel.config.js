@@ -11,6 +11,7 @@ const presets = [
       useBuiltIns: "usage",
     },
   ],
+  "minify",
 ];
 
 module.exports = { presets };
