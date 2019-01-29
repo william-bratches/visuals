@@ -19,7 +19,7 @@
   },
   "scripts": {
     "stop": "./node_modules/.bin/pm2 kill",
-    "start": "./node_modules/.bin/pm2 start ./server/index.js --watch",
+    "start": "NODE_ENV=development ./node_modules/.bin/pm2 start ./server/index.js --watch",
     "start:production": "NODE_ENV=production ./node_modules/.bin/pm2 start ./server/index.js",
     "transpile": "npm run transpile:babel && npm run transpile:css",
     "transpile:babel": "./node_modules/.bin/babel crt --out-dir dist --copy-files",
