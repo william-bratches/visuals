@@ -5,7 +5,7 @@ const data = () => ({
     { mon: false, tue: true, wed: true, thu: true, fri: false, sat: true, sun: false },
     { mon: true, tue: false, wed: false, thu: false, fri: true, sat: false, sun: true },
     { mon: true, tue: true, wed: false, thu: false, fri: true, sat: false, sun: true },
-    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: true, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
   ],
   meditation: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
