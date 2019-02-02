@@ -12,7 +12,7 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: true, sun: true },
     { mon: true, tue: false, wed: false, thu: false, fri: true, sat: false, sun: true },
-    { mon: false, tue: true, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: true, wed: false, thu: false, fri: false, sat: true, sun: false },
   ],
   earlybird: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -48,7 +48,7 @@ const data = () => ({
     goal: 50
   },
   salad: {
-    current: 9,
+    current: 10,
     goal: 200
   },
   opensource: {
