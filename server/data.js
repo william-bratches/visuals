@@ -37,7 +37,7 @@ const data = () => ({
     goal: 52
   },
   blog: {
-    current: 0,
+    current: 1,
     goal: 6
   },
   people: {
@@ -53,7 +53,7 @@ const data = () => ({
     goal: 50
   },
   salad: {
-    current: 11,
+    current: 12,
     goal: 200
   },
   opensource: {
