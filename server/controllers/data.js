@@ -15,7 +15,6 @@ const week = (data, prop) => {
 
     return prev += 1;
   }, 0); // starting at zero reduces net failures by 1, acccounting for current week
-
   return Math.floor((successes / 52) * 100) / 100;
 }
 
