@@ -9,7 +9,7 @@ const data = () => ({
     { mon: true, tue: false, wed: true, thu: false, fri: false, sat: false, sun: true },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: true },
     { mon: true, tue: false, wed: true, thu: false, fri: false, sat: true, sun: false },
-    { mon: true, tue: false, wed: false, thu: false, fri: true, sat: true, sun: true },
+    { mon: true, tue: false, wed: false, thu: false, fri: true, sat: true, sun: false },
   ],
   meditation: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -20,6 +20,7 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: true, wed: false, thu: false, fri: true, sat: true, sun: false },
+    { mon: false, tue: false, wed: false, thu: true, fri: true, sat: true, sun: false },
   ],
   earlybird: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -27,6 +28,8 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },    
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: false, thu: true, fri: true, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: true, fri: true, sat: false, sun: false },
   ],
@@ -51,7 +54,7 @@ const data = () => ({
     goal: 50
   },
   salad: {
-    current: 16,
+    current: 18,
     goal: 200
   },
   opensource: {
