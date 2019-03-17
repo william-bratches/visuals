@@ -11,7 +11,7 @@ const data = () => ({
     { mon: true, tue: false, wed: true, thu: false, fri: false, sat: true, sun: false },
     { mon: true, tue: false, wed: false, thu: false, fri: true, sat: true, sun: false },
     { mon: true, tue: false, wed: false, thu: true, fri: false, sat: false, sun: true },
-    { mon: true, tue: false, wed: false, thu: false, fri: false, sat: true, sun: false },
+    { mon: true, tue: false, wed: false, thu: false, fri: false, sat: true, sun: true },
   ],
   meditation: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -38,7 +38,7 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: true, fri: false, sat: true, sun: true },
     { mon: false, tue: true, wed: true, thu: true, fri: false, sat: false, sun: false },
-    { mon: false, tue: false, wed: true, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: true, thu: false, fri: false, sat: false, sun: true },
   ],
   blog: {
     current: 1,
