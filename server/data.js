@@ -15,6 +15,8 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: true, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: true, tue: true, wed: false, thu: false, fri: false, sat: false, sun: false },
+
   ],
   meditation: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -31,6 +33,8 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: true, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: true, tue: true, wed: false, thu: false, fri: false, sat: false, sun: false },
+
   ],
   earlybird: [
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
@@ -47,6 +51,8 @@ const data = () => ({
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
     { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+    { mon: false, tue: false, wed: false, thu: false, fri: false, sat: false, sun: false },
+
   ],
   blog: {
     current: 1,
